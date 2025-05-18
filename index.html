@@ -1,63 +1,132 @@
- <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Calculator</title>
-      <link rel="stylesheet" href="/Style/bootstrap.min.css" />
-      <link rel="stylesheet" href="/Style/style.css" />
-    </head>
-    <body
-      class="bg-dark text-white d-flex justify-content-center align-items-center vh-100"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body
+    class="bg-dark text-white d-flex justify-content-center align-items-center vh-100"
+  >
+    <div
+      class="card bg-secondary p-4 rounded-4 shadow-lg"
+      style="max-width: 320px; width: 100%"
+      role="application"
+      aria-label="Calculator"
     >
-      <div
-        class="card bg-secondary p-4 rounded-4 shadow-lg"
-        style="width: 320px"
-      >
-        <input
-          class="form-control mb-3 text-end fs-4 display"
-          type="text"
-          readonly
-        />
+      <input
+        class="form-control mb-3 text-end fs-4 display"
+        type="text"
+        readonly
+        aria-label="Calculator display"
+      />
 
-        <div class="d-flex gap-2 mb-2">
-          <button class="btn btn-danger flex-fill on">ON</button>
-          <button class="btn btn-outline-light flex-fill allBtu">*</button>
-          <button class="btn btn-outline-light flex-fill allBtu">-</button>
-          <button class="btn btn-outline-light flex-fill allBtu">/</button>
-        </div>
-
-        <div class="d-flex gap-2 mb-2">
-          <button class="btn btn-outline-light flex-fill allBtu">7</button>
-          <button class="btn btn-outline-light flex-fill allBtu">8</button>
-          <button class="btn btn-outline-light flex-fill allBtu">9</button>
-          <button class="btn btn-outline-light flex-fill allBtu">+</button>
-        </div>
-
-        <div class="d-flex gap-2 mb-2">
-          <button class="btn btn-outline-light flex-fill allBtu">4</button>
-          <button class="btn btn-outline-light flex-fill allBtu">5</button>
-          <button class="btn btn-outline-light flex-fill allBtu">6</button>
-          <button class="btn btn-outline-light flex-fill allBtu">%</button>
-        </div>
-
-        <div class="d-flex gap-2 mb-2">
-          <button class="btn btn-outline-light flex-fill allBtu">1</button>
-          <button class="btn btn-outline-light flex-fill allBtu">2</button>
-          <button class="btn btn-outline-light flex-fill allBtu">3</button>
-          <button class="btn btn-warning flex-fill AC">DEL</button>
-        </div>
-
-        <div class="d-flex gap-2">
-          <button class="btn btn-outline-light flex-fill allBtu">0</button>
-          <button class="btn btn-outline-light flex-fill allBtu">.</button>
-          <button class="btn btn-success flex-fill Equal">=</button>
-          <button class="btn btn-danger flex-fill del">AC</button>
-        </div>
+      <div class="d-flex gap-2 mb-2">
+        <button class="btn btn-success flex-fill btn-on" aria-label="Turn on">
+          ON
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-op allBtu"
+          aria-label="Multiply"
+        >
+          *
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-op allBtu"
+          aria-label="Subtract"
+        >
+          -
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-op allBtu"
+          aria-label="Divide"
+        >
+          /
+        </button>
       </div>
 
-      <script src="/js/bootstrap.bundle.min.js"></script>
-      <script src="/js/index.js"></script>
-    </body>
-  </html>
+      <div class="d-flex gap-2 mb-2">
+        <button
+          class="btn btn-dark flex-fill btn-num allBtu"
+          aria-label="Seven"
+        >
+          7
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-num allBtu"
+          aria-label="Eight"
+        >
+          8
+        </button>
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Nine">
+          9
+        </button>
+        <button class="btn btn-dark flex-fill btn-op allBtu" aria-label="Add">
+          +
+        </button>
+      </div>
+
+      <div class="d-flex gap-2 mb-2">
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Four">
+          4
+        </button>
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Five">
+          5
+        </button>
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Six">
+          6
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-op allBtu"
+          aria-label="Percentage"
+        >
+          %
+        </button>
+      </div>
+
+      <div class="d-flex gap-2 mb-2">
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="One">
+          1
+        </button>
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Two">
+          2
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-num allBtu"
+          aria-label="Three"
+        >
+          3
+        </button>
+        <button
+          class="btn btn-warning flex-fill btn-del del"
+          aria-label="Delete"
+        >
+          DEL
+        </button>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-dark flex-fill btn-num allBtu" aria-label="Zero">
+          0
+        </button>
+        <button
+          class="btn btn-dark flex-fill btn-op allBtu"
+          aria-label="Decimal"
+        >
+          .
+        </button>
+        <button class="btn btn-primary flex-fill btn-equal" aria-label="Equals">
+          =
+        </button>
+        <button class="btn btn-danger flex-fill btn-del del" aria-label="Clear">
+          AC
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
