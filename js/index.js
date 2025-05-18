@@ -1,31 +1,37 @@
-var myAllbutton = document.querySelectorAll(".allBtu");
-var myDelbutton=document.querySelector(".del")
-var display = document.querySelector(".display");
-var myEqual = document.querySelector(".Equal");
-var myAc =document.querySelector(".AC");
-var myOn =document.querySelector(".on");
+const buttons = document.querySelectorAll(".allBtu");
+const delButtons = document.querySelectorAll(".del");
+const display = document.querySelector(".display");
+const equalBtn = document.querySelector(".btn-equal");
+const onBtn = document.querySelector(".btn-on");
 
-  myAllbutton.forEach((myAllbutton)=>{
-    myAllbutton.addEventListener("click",()=>{         
-      display.value+=myAllbutton.innerHTML;
-      })
-  })
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    display.value += btn.innerHTML.trim();
+  });
+});
 
- myDelbutton.addEventListener("click",()=>{
-        display.value="";
-  })
-
- myEqual.addEventListener("click",()=>{
-   display.value = eval(display.value);
-    if(display.value=="undefined"){
-       display.value="";
+delButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.innerHTML.trim() === "DEL") {
+      display.value = display.value.slice(0, -1);
+    } else if (btn.innerHTML.trim() === "AC") {
+      display.value = "";
     }
-  })
+  });
+});
 
- myAc.addEventListener("click",()=>{
-    display.value=display.value.slice(0,-1);
-  })
+equalBtn.addEventListener("click", () => {
+  try {
+    let expression = display.value.replace(/\s+/g, "");
+    expression = expression.replace(/%/g, "*0.01");
+    let result = eval(expression);
+    display.value = result === undefined ? "" : result;
+  } catch (error) {
+    display.value = "Error";
+    setTimeout(() => (display.value = ""), 1500);
+  }
+});
 
- myOn.addEventListener("click",()=>{
-   display.value="Hello";
- })
+onBtn.addEventListener("click", () => {
+  display.value = "Hello";
+});
